@@ -10,13 +10,18 @@ public class Ex1 {
         //Exercício 1
 
         Scanner scan = new Scanner(System.in);
+
         System.out.println("DIGITE O NÚMERO DE LINHAS QUE VOCÊ DESEJA: \n");
 
         StringTokenizer token;
         int linhas = Integer.parseInt(scan.nextLine());
         ArrayList<Integer> arr = new ArrayList<>();
+
         System.out.println("INFORME OS NÚMEROS");
-        for (int c = 0; c < linhas; c++) {
+
+        int c = 0;
+        while (c < linhas) {
+            c++;
             token = new StringTokenizer(scan.nextLine());
             arr.add(Integer.parseInt(token.nextToken()));
         }
@@ -29,7 +34,7 @@ public class Ex1 {
         result.addAll(Collections.singleton(impar));
         for (List<Integer> item : result
         ) {
-            System.out.print(item);
+            System.out.print("\n" + item);
         }
 
     }
