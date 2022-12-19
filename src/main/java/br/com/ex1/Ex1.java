@@ -14,13 +14,13 @@ public class Ex1 {
         System.out.println("DIGITE O NÚMERO DE LINHAS QUE VOCÊ DESEJA: \n");
 
         StringTokenizer token;
-        int linhas = Integer.parseInt(scan.nextLine());
+        int numeroDeLinhas = Integer.parseInt(scan.nextLine());
         ArrayList<Integer> arr = new ArrayList<>();
 
         System.out.println("INFORME OS NÚMEROS");
 
         int c = 0;
-        while (c < linhas) {
+        while (c < numeroDeLinhas) {
             c++;
             token = new StringTokenizer(scan.nextLine());
             arr.add(Integer.parseInt(token.nextToken()));
@@ -28,13 +28,18 @@ public class Ex1 {
         var par = arr.stream().filter(l -> l % 2 == 0).sorted().collect(Collectors.toList());
         var impar = arr.stream().filter(l -> l % 2 != 0).sorted().collect(Collectors.toList());
 
-        ArrayList<List<Integer>> result = new ArrayList<>();
+        List<Integer> resultPar = new ArrayList<>();
+        List<Integer> resultImpar = new ArrayList<>();
 
-        result.addAll(Collections.singleton(par));
-        result.addAll(Collections.singleton(impar));
-        for (List<Integer> item : result
+        resultPar.addAll(par);
+        resultImpar.addAll(impar);
+        for (Integer item1 : resultPar
         ) {
-            System.out.print("\n" + item);
+            System.out.println(item1);
+        }
+        for (Integer item2 : resultImpar
+        ) {
+            System.out.println(item2);
         }
 
     }
